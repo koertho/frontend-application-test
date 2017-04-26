@@ -20,8 +20,6 @@ a {
 	color: inherit;
 }
 
-/*@media (max-width: 767px)*/
-
 @media (min-width: 1200px) {
 	.inner-container,
 	section.content,
@@ -75,6 +73,43 @@ ul.navbar-nav li a:hover {
  div.title h2 {
 	 font-size: 1em;
  }
+
+/**
+ * Content
+ **/
+
+ section.content .part h3 {
+	 font-size: 1.1em;
+	 text-align: center;
+ }
+ section.content .part p {
+	 font-size: 0.9em;
+	 text-align: center;
+ }
+
+ @media (min-width: 768px) {
+	section.content .part {
+		width: 31%;
+		height: 250px;
+		margin: 1%;
+		float: left;
+		overflow: hidden;
+	}
+
+	section.content::after {
+		display: block;
+		content: "";
+		clear: both;
+	}
+ }
+
+
+@media (max-width: 767px) {
+	section.content .part {
+		width: 100%;
+	}
+}
+
 
 /**
  * Footer
