@@ -1,1 +1,266 @@
-/* CSS-Anpassungen bitte hier */
+body {
+	font-family: Raleway, Arial;
+	margin: 0px;
+}
+
+h1, h2, h3 {
+	font-weight: 200;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+h1 {
+	font-size: 3em;
+}
+h2 {
+	font-size: 2em;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.container > .navbar > *,
+.container .footer-wrapper
+/*.container > .row > * */
+{
+	padding: 15px;
+}
+
+@media (min-width: 1200px) {
+	.container > .navbar > *,
+	.container .footer-wrapper{
+		width: 1190px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+/**
+ * Header
+ **/
+
+.container > div.navbar {
+	background-color: #000;
+	text-transform: uppercase;
+	color: white;
+	text-align: center;
+	height: 63px;
+}
+
+ul.navbar-nav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.navbar-nav li {
+	display: inline-block;
+	padding: 8px;
+}
+ul.navbar-nav li a:hover {
+	border-bottom: 2px solid #C0CE00;
+}
+
+.container > div.row:nth-child(2) {
+	height: calc(100vh - 63px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (max-width: 767px) {
+	.container > div.navbar {
+		background-color: #000;
+		text-transform: uppercase;
+		color: white;
+		text-align: center;
+		height: auto;
+	}
+	ul.navbar-nav::after {
+		display: block;
+		content:"";
+		clear: both;
+	}
+	ul.navbar-nav li {
+		display: block;
+		width: 50%;
+		float: left;
+		text-align: right;
+		box-sizing: border-box;
+	}
+	ul.navbar-nav li:nth-child(even) {
+		text-align: left;
+	}
+}
+
+/**
+ * Title
+ **/
+ div.title h1, 
+ div.title h2 {
+	 margin: 0;
+ }
+
+div.title h1 {
+	 font-size: 6em;
+	 font-weight: bolder;
+	 animation-name: colorIn;
+	 animation-duration: 1s;
+	 animation-delay: 1s;
+	 animation-timing-function: ease-in-out;
+ }
+div.title h2 {
+	 font-size: 3em;
+	 margin-bottom: 4em;
+}
+
+@media (max-width:767px) {
+	div.title h1 {
+		font-size: 4em;
+		font-weight: bolder;
+	}
+	div.title h2 {
+		font-size: 2em;
+		margin-bottom: 2em;
+	}
+}
+
+.container > div.row:nth-child(2)::after {
+	border: solid #C0CE00;
+	border-width: 0 9px 9px 0;
+	display: block;
+	padding: 15px;
+	transform: rotate(45deg);
+	content: "";
+	position: absolute;
+	bottom: 40px;
+}
+
+/**
+ * Content
+ **/
+
+ section.content {
+	 position: relative;
+ }
+
+ section.content::after {
+	 clear: both;
+	 content:"";
+	 display: block;
+	 height: 320px;
+ }
+
+section.content .part {
+	background-color: #000;
+	color: #FFF;
+	padding: 4em 15px ;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: 1;
+	transition: opacity 1s;
+	box-sizing: border-box;
+}
+
+section.content .part.active {
+	opacity: 1;
+	z-index: 1;
+}
+
+section.content > .part > * {
+	max-width: 1190px;
+	margin-right: auto;
+	margin-left: auto;
+} 
+
+section.content .part h3 {
+	font-size: 2em;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 2em;
+
+}
+section.content .part p {
+	margin-bottom: 0;
+	text-align: center;
+}
+
+
+/**
+ * Footer
+ **/
+
+.container > div.row:last-child {
+	background: #ebebe7;
+	padding: 1em;
+	margin-top: 2px;
+}
+
+.footer-wrapper > p {
+	display: block;
+	text-align: center;
+}
+
+.social-buttons i.icon {
+	background-color: #C0CE00;
+	border-radius: 50%;
+	display: inline-block;
+	width: 4em;
+	height: 4em;
+	position: relative;
+	margin: 0.2em;
+}
+.social-buttons i.icon.icon-facebook {
+	background-color: blue;
+}
+.social-buttons i.icon.icon-twitter {
+	background-color: lightblue;
+}
+.social-buttons i.icon.icon-google {
+	background-color: orange;
+}
+.social-buttons i.icon.icon-facebook::after {
+	content: "f";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%,0);
+	color: white;
+	font-size: 2em;
+	font-style: initial;
+}
+.social-buttons i.icon.icon-twitter::after {
+	content: "t";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%,0);
+	color: white;
+	font-size: 2em;
+	font-style: initial;
+}
+.social-buttons i.icon.icon-google::after {
+	content: "g+";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%,0);
+	color: white;
+	font-size: 2em;
+	font-style: initial;
+}
+
+ /**
+  * Keyframes
+  **/
+@keyframes colorIn {
+	0% {color: #000;}
+	50% {color: #C0CE00}
+	100% {color: #000}
+}
