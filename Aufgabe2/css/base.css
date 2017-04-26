@@ -150,11 +150,10 @@ div.title h2 {
 	 clear: both;
 	 content:"";
 	 display: block;
-	 height: 320px;
+	 height: 400px;
  }
 
 section.content .part {
-	background-color: #000;
 	color: #FFF;
 	padding: 4em 15px ;
 	position: absolute;
@@ -166,6 +165,18 @@ section.content .part {
 	z-index: 1;
 	transition: opacity 1s;
 	box-sizing: border-box;
+}
+
+section.content .slide-background {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	background-repeat: no-repeat;
+	background-size: cover;
+	filter: brightness(50%);
 }
 
 section.content .part.active {
