@@ -30,7 +30,6 @@ a {
 
 @media (min-width: 1200px) {
 	.container > .navbar > *,
-	/*.container > .row > * ,*/
 	.container .footer-wrapper{
 		width: 1190px;
 		margin-right: auto;
@@ -99,11 +98,6 @@ ul.navbar-nav li a:hover {
 /**
  * Title
  **/
-
- div.title {
-	 padding: 1em;
- }
-
  div.title h1, 
  div.title h2 {
 	 margin: 0;
@@ -112,14 +106,18 @@ ul.navbar-nav li a:hover {
 div.title h1 {
 	 font-size: 6em;
 	 font-weight: bolder;
+	 animation-name: colorIn;
+	 animation-duration: 1s;
+	 animation-delay: 1s;
+	 animation-timing-function: ease-in-out;
  }
 div.title h2 {
 	 font-size: 3em;
 	 margin-bottom: 4em;
 }
 
- @media (max-width:767px) {
-	  div.title h1 {
+@media (max-width:767px) {
+	div.title h1 {
 		font-size: 4em;
 		font-weight: bolder;
 	}
@@ -127,7 +125,7 @@ div.title h2 {
 		font-size: 2em;
 		margin-bottom: 2em;
 	}
- }
+}
 
 .container > div.row:nth-child(2)::after {
 	border: solid #C0CE00;
@@ -138,35 +136,36 @@ div.title h2 {
 	content: "";
 	position: absolute;
 	bottom: 40px;
- }
+}
 
 /**
  * Content
  **/
 
- section.content .part {
-	 padding: 4em 0 ;
- }
+section.content .part {
+	padding: 4em 15px ;
+}
 
- section.content > .part > * {
+section.content > .part > * {
 	max-width: 1190px;
 	margin-right: auto;
 	margin-left: auto;
- } 
+} 
 
- section.content .part:nth-child(odd) {
-	 background-color: #000;
-	 color: #FFF;
- }
+section.content .part:nth-child(odd) {
+	background-color: #000;
+	color: #FFF;
+}
 
- section.content .part h3 {
+section.content .part h3 {
 	font-size: 2em;
 	text-align: center;
 	margin-bottom: 2em;
- }
- section.content .part p {
-	 text-align: center;
- }
+
+}
+section.content .part p {
+	text-align: center;
+}
 
 
 /**
@@ -176,4 +175,67 @@ div.title h2 {
 .container > div.row:last-child {
 	background: #ebebe7;
 	padding: 1em;
+}
+
+.footer-wrapper > p {
+	display: block;
+	text-align: center;
+}
+
+.social-buttons i.icon {
+	background-color: #C0CE00;
+	border-radius: 50%;
+	display: inline-block;
+	width: 4em;
+	height: 4em;
+	position: relative;
+	margin: 0.2em;
+}
+.social-buttons i.icon.icon-facebook {
+	background-color: blue;
+}
+.social-buttons i.icon.icon-twitter {
+	background-color: lightblue;
+}
+.social-buttons i.icon.icon-google {
+	background-color: orange;
+}
+.social-buttons i.icon.icon-facebook::after {
+	content: "f";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%,0);
+	color: white;
+	font-size: 2em;
+	font-style: initial;
+}
+.social-buttons i.icon.icon-twitter::after {
+	content: "t";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%,0);
+	color: white;
+	font-size: 2em;
+	font-style: initial;
+}
+.social-buttons i.icon.icon-google::after {
+	content: "g+";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%,0);
+	color: white;
+	font-size: 2em;
+	font-style: initial;
+}
+
+ /**
+  * Keyframes
+  **/
+@keyframes colorIn {
+	0% {color: #000;}
+	50% {color: #C0CE00}
+	100% {color: #000}
 }
